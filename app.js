@@ -12,10 +12,12 @@ app.listen(port, () => {
 })
 
 
-console.log(posts)
+app.get('/posts', (req,res) => {
+    // console.log('Prova')
+    res.send(`lista dei post ${posts}`)
+})
 
 
-
-app.get('/', (req,res) => {
-    console.log('Prova')
+app.delete('/post/1/', (req,send) => {
+    res.send(`Cancellazione post 1 ${posts}`)
 })
