@@ -1,4 +1,5 @@
-console.log('posts')
+const express = require('express') 
+const posts = require('./posts')
 
 const app = express()
 const port = 3000
@@ -6,9 +7,15 @@ const port = 3000
 
 app.use(express('static'))
 
-const posts = require('posts')
+app.listen(port, () => {
+    console.log(`in ascolto sulla porta ${port}`)
+})
+
+
 console.log(posts)
 
-router.get('routers/posts.js', (req,res) => {
-    console.log(res)
+
+
+app.get('/', (req,res) => {
+    console.log('Prova')
 })
